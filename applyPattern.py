@@ -52,19 +52,15 @@ def apply_pattern(pattern_type,new_pixel_array,h,w):
             b0=int(pixel[2])
 
         pixel_new=[r0,g0,b0]
-        #print("new pixel")
-        #print(pixel_new)
+      
         return pixel_new
 
     len_=len(new_pixel_array)
-    #print(len_)
-    #print(w)
-    #print(h)
+  
     for y in range(0, h):
         for x in range(0, w):
             pos=convert_xyto_pos(x, y,size)
-            #print(pos)
-            #print(filter_pattern_ref[x][y])
+        
             filter_pattern_ref[y][x] = str_to_rgb(pattern[pos])
             new_pixel_array[y][x] = apply_mask(new_pixel_array[y][x], filter_pattern_ref[y][x])
 
